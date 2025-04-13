@@ -1,0 +1,32 @@
+{
+  "name": "lamejs-patched",
+  "version": "1.0.0",
+  "description": "Patched version of lamejs MP3 encoder",
+  "main": "dist/index.js",
+  "type": "commonjs",
+  "files": [
+    "dist",
+    "patches"
+  ],
+  "scripts": {
+    "prepare": "patch-package",
+    "test": "node test/test.js",
+    "build": "mkdir -p dist && cp -r node_modules/lamejs/src/* dist/"
+  },
+  "keywords": [
+    "mp3",
+    "encoder",
+    "audio",
+    "lame",
+    "lamejs",
+    "patched"
+  ],
+  "author": "",
+  "license": "LGPL-3.0",
+  "dependencies": {
+    "lamejs": "^1.2.1"
+  },
+  "devDependencies": {
+    "patch-package": "^8.0.0"
+  }
+}
