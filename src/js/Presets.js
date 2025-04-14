@@ -1,4 +1,5 @@
 var common = require('./common.js');
+var MPEGMode = require('./MPEGMode.js');
 var System = common.System;
 var VbrMode = common.VbrMode;
 var Float = common.Float;
