@@ -1001,7 +1001,6 @@ function BitStream() {
 
     this.init_bit_stream_w = function (gfc) {
         buf = new_byte(Lame.LAME_MAXMP3BUFFER);
-
         gfc.h_ptr = gfc.w_ptr = 0;
         gfc.header[gfc.h_ptr].write_timing = 0;
         bufByteIdx = -1;
@@ -1015,8 +1014,8 @@ function BitStream() {
 }
 
 BitStream.EQ = function (a, b) {
-    return (Math.abs(a) > Math.abs(b)) ? (Math.abs((a) - (b)) <= (Math
-        .abs(a) * 1e-6))
+    return (Math.abs(a) > Math.abs(b)) 
+        ? (Math.abs((a) - (b)) <= (Math.abs(a) * 1e-6))
         : (Math.abs((a) - (b)) <= (Math.abs(b) * 1e-6));
 };
 

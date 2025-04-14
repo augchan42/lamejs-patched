@@ -1,0 +1,33 @@
+diff --git a/src/js/BitStream.js b/src/js/BitStream.js
+index dd9d69f..94471ae 100644
+--- a/src/js/BitStream.js
++++ b/src/js/BitStream.js
+@@ -1014,13 +1014,15 @@ function BitStream() {
+     this.init_bit_stream_w = function (gfc) {
+         buf = new_byte(Lame.LAME_MAXMP3BUFFER);
+         gfc.h_ptr = gfc.w_ptr = 0;
+         gfc.header[gfc.h_ptr].write_timing = 0;
+         bufByteIdx = -1;
+         bufBitIdx = 0;
+         totbit = 0;
+     };
++}
+ 
+-BitStream.EQ = function (a, b) {
++// Add static methods to BitStream
++BitStream.prototype.EQ = function (a, b) {
+     return (Math.abs(a) > Math.abs(b)) ? (Math.abs((a) - (b)) <= (Math
+         .abs(a) * 1e-6))
+         : (Math.abs((a) - (b)) <= (Math.abs(b) * 1e-6));
+@@ -1028,6 +1030,9 @@ BitStream.EQ = function (a, b) {
+ 
+-BitStream.NEQ = function (a, b) {
++BitStream.prototype.NEQ = function (a, b) {
+     return !BitStream.EQ(a, b);
+ };
+ 
++// Add static methods to constructor
++BitStream.EQ = BitStream.prototype.EQ;
++BitStream.NEQ = BitStream.prototype.NEQ;
++
+ module.exports = BitStream; 

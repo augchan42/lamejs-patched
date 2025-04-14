@@ -1,6 +1,6 @@
 {
   "name": "lamejs-patched",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Patched version of lamejs MP3 encoder",
   "main": "dist/js/index.js",
   "type": "commonjs",
